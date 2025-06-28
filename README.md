@@ -1,7 +1,10 @@
 # 📸 Procesador de Imágenes para Inventario Escolar
 
 Este proyecto es una herramienta web desarrollada en JavaScript puro que permite procesar múltiples imágenes para extraer información de activos fijos mediante OCR (Reconocimiento Óptico de Caracteres). Está diseñado para facilitar la recopilación de datos de inventario de bienes en instituciones educativas.
+
 ![image](https://github.com/user-attachments/assets/42a87dc3-180c-4f04-85aa-e65d217e2669)
+
+---
 
 ## 🚀 Funcionalidades
 
