@@ -1,0 +1,71 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Lectura de Etiquetas</title>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4.0.2/dist/tesseract.min.js"></script>
+</head>
+<body>
+<h2>Lector de Etiquetas</h2>
+
+  <label for="salon">¿Qué salón es?</label>
+<input type="number" id="salon" min="1" placeholder="Ejemplo : Salon 10" style="width: 100%; padding: 0.7rem; border-radius: 10px; border: 1px solid #ccc; margin-bottom: 1rem;">
+
+   <label for="categoria">Selecciona Categoría:</label>
+  <select id="categoria" onchange="mostrarInputCantidad()">
+    <option>Bancos Azul</option>
+    <option>Bancos Cafeses</option>
+    <option>Aires</option>
+    <option>Televisión</option>
+    <option>Mica Televisión</option>
+    <option>Escritorio y Silla</option>
+    <option>Pizarrón</option>
+    <option>Soporte de la Televisión</option>
+  </select>
+
+  <div id="inputCantidadContainer" style="display:none;">
+    <label for="cantidad">Cantidad existente:</label>
+    <input type="number" id="cantidad" min="1" placeholder="Ej. 3" />
+  </div>
+
+<!-- Botón para tomar foto directo desde cámara -->
+<label for="tomarFoto" class="file-label" style="margin-bottom: 0.5rem;">
+  <i class="fas fa-camera"></i> Tomar Foto (Cámara)
+</label>
+<input
+  type="file"
+  id="tomarFoto"
+  accept="image/*"
+  capture="environment"
+  style="display:none;"
+  onchange="agregarArchivos(event)"
+/>
+
+<!-- Botón para seleccionar múltiples imágenes del archivo -->
+<label for="seleccionarFotos" class="file-label" style="margin-bottom: 1rem;">
+  <i class="fas fa-images"></i> Seleccionar Imágenes
+</label>
+<input
+  type="file"
+  id="seleccionarFotos"
+  accept="image/*"
+  multiple
+  style="display:none;"
+  onchange="agregarArchivos(event)"
+/>
+
+  <button onclick="procesarImagen()">
+    <i class="fas fa-barcode"></i> Leer Etiquetas
+  </button>
+
+  <div class="modal" id="modalResultado">
+    <div class="modal-content" id="contenidoResultado">
+      <div class="cuadro"><strong>Procesando...</strong></div>
+    </div>
+  </div>
+
+  <!-- Justo después del botón "Leer Etiquetas", agrega este contenedor para la tabla -->
+<div class="tabla-scroll" id="tablaResultados" style="margin-top: 2rem;"></div>
+</body>
+</html>
