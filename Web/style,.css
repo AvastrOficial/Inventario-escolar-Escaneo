@@ -1,0 +1,132 @@
+   * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: #f9f9f9;
+      padding: 1rem;
+      color: #333;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    label, select, input[type="file"], button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    select, input[type="file"], button {
+      padding: 0.7rem;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      background: #fff;
+    }
+
+    button {
+      background: #007aff;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: white;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: slideUp 0.4s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(100px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .cuadro {
+      background: #f0f0f0;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 10px;
+    }
+
+    .close-btn {
+      margin-top: 1rem;
+      background: #ff3b30;
+      color: white;
+    }
+    .file-label {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  text-align: center;
+  background: #ffffff;
+  border: 2px dashed #ccc;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  color: #444;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.file-label:hover {
+  background: #f0f0f0;
+  border-color: #007aff;
+  color: #007aff;
+}
+.tabla-scroll {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 1rem;
+  border-radius: 12px;
+}
+
+table {
+  min-width: 600px; /* fuerza el scroll si es más ancha que el contenedor */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgb(0 0 0 / 0.1);
+}
+
+th, td {
+  padding: 0.7rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background: #f7f7f7;
+  font-weight: 600;
+  color: #444;
+}
+
+tbody tr:hover {
+  background: #f0f8ff;
+}
+
